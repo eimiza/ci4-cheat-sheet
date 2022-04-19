@@ -1,0 +1,29 @@
+<div v-scope="container()" @vue:mounted="mounted">
+    {{message}}
+</div>
+
+<script type="module">
+  import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
+
+  const store = reactive({
+      message: 'hello from store',
+ 
+  });
+
+  function container() {
+    return {
+        message: 'hello world',
+        method1(){
+            console.log('from mounted');
+        },
+        mounted() {
+            this.method1();
+            console.log('I am mounted!');
+        }
+    }
+  }
+
+  createApp({
+    container, store
+  }).mount()
+</script>
