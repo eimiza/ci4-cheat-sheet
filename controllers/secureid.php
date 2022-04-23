@@ -19,20 +19,15 @@
         return str_replace(array('+', '/', '='), array('-', '_', '~'), $cipher);
     }
 
-    public function add_secure_id($dataInArray, $field_id, $field_secure = 'enc_id'){
-        $result = array_map(function ($arr){
-            $arr[$field_secure] = $this->enc_secure($arr[$field_id]);
-            return $arr;
-        },$dataInArray);
-
-        return $result;
-    }
-
-//tambah encryption id
+    public function add_secure_id(){
         $data = $this->model->getAllDataArray($this->limit, $this->getOffset($page), $filter);
         $data = array_map(function ($arr){
             $arr['secure_id'] = $this->enc_secure($arr['mykid']);
             return $arr;
         },$data);
+    }
+
+
+        
 
 
