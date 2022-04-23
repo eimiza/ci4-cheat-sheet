@@ -1,3 +1,5 @@
+<?php
+
     public function dec_secure($cipher){
         $encrypter = service('encrypter');
         $cipher=str_replace(array('-', '_', '~'), array('+', '/', '='), $cipher);
@@ -31,3 +33,6 @@
         
 
 
+
+
+?>
