@@ -1,8 +1,10 @@
 
+<td>{{((store.page-1)*store.perPage)+index+1}}</td>
+
 <div class="d-flex justify-content-center">
-                <ul class="pagination">
-                    <li class="page-item" :class="{ active: index == store.page }" v-for="index in store.totalPage" :key="index">
-                        <a @click="getData(index)" class="page-link" href="#">{{index}}</a>
-                    </li>
-                </ul>
-            </div>
+    <ul class="pagination">
+        <li class="page-item" :class="{ active: index == store.page }" v-for="index in store.totalPage" :key="index">
+            <a @click="getData(index)" class="page-link" href="#">{{index}}</a>
+        </li>
+    </ul>
+</div>
