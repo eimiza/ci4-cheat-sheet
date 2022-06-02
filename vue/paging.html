@@ -1,0 +1,29 @@
+<div class="input-group m-b d-flex justify-content-center">
+      <span v-show="store.page!=1" class="input-group-btn">
+          <a @click="getData(1)" class="btn white" type="button"><<</a>
+      </span>
+      <span v-show="store.page>1" class="input-group-btn">
+          <a @click="getData(store.page-1)" class="btn white" type="button"><</a>
+      </span>
+      <span v-show="store.page-2 > 0" class="input-group-btn">
+          <a @click="getData(store.page-2)" class="btn white" type="button">{{store.page-2}}</a>
+      </span>
+      <span v-show="store.page>1" class="input-group-btn">
+          <a @click="getData(store.page-1)" class="btn white" type="button">{{store.page-1}}</a>
+      </span>
+      <span class="input-group-btn">
+          <a @click="getData(store.page)" class="btn primary" type="button">{{store.page}}</a>
+      </span>
+      <span v-show="store.page<store.totalPage" class="input-group-btn">
+          <a @click="getData(store.page+1)" class="btn white" type="button">{{store.page+1}}</a>
+      </span>
+      <span v-show="store.page+2 < store.totalPage" class="input-group-btn">
+          <a @click="getData(store.page+2)" class="btn white" type="button">{{store.page+2}}</a>
+      </span>
+      <span v-show="store.page<store.totalPage" class="input-group-btn">
+          <a @click="getData(store.page+1)" class="btn white" type="button">></a>
+      </span>
+      <span v-show="store.page<store.totalPage" class="input-group-btn">
+          <a @click="getData(store.totalPage)" class="btn white" type="button">>></a>
+      </span>
+</div>
